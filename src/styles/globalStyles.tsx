@@ -14,11 +14,11 @@ export default createGlobalStyle`
         width: 100%;
     }
 
-    h1, h2, li {
+    h1, h2, li, label, button {
         font-family: 'Orelega One', cursive;
     }
 
-    span, p , a{
+    span, p , a, input[type=number]{
         font-family: 'Lora', serif;
         font-size: 15px;
     }
