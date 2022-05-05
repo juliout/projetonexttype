@@ -95,9 +95,10 @@ export const AsideMenu = styled.div`
 `
 export const BoxColor = styled.div<ColorProps>`
     background-color: ${props => props.colorBg};
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin-right: 2px;
+    margin-top: 2px;
     cursor: pointer;
 
 `

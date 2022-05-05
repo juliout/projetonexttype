@@ -6,15 +6,15 @@ export default function Header() {
   
   return (
     <DivHeader>
-      <img src='/images/logo.png' alt=""  className='Logo'/>
+      <a href="/"><img src='/images/logo.png' alt=""  className='Logo'/></a>
       <ul>
-        <BtnLink href="/" backgroudChose={'/images/nikebgtitle.png'}>
+        <BtnLink href="/shoes/nike" backgroudChose={'/images/nikebgtitle.png'}>
           <li>Nike</li>
         </BtnLink>
-        <BtnLink href="/" backgroudChose={'/images/adidasbgtitle.png'}>
+        <BtnLink href="/shoes/adidas" backgroudChose={'/images/adidasbgtitle.png'}>
           <li>Adidas</li>
         </BtnLink>
-        <BtnLink href="/" backgroudChose={'/images/pumabgtitle.png'}>
+        <BtnLink href="/shoes/puma" backgroudChose={'/images/pumabgtitle.png'}>
           <li>Puma</li>
         </BtnLink>
       </ul>
