@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Footer from '../../../components/Footer';
 import Header from '../../../components/Header';
-import { AsideMenu, BodyShoesPage, MainShowCase, BoxColor, MainPriceS, DivItensShowCase, CardItem, BackGroundDivCard } from '../../../styles/shoesPageStyle';
+import { AsideMenu, BodyShoesPage, MainShowCase, BoxColor, MainPriceS, DivItensShowCase, CardItem, BackGroundDivCard } from '../../../components/ModelPageShoes/shoesPageStyle';
 
 type CardSet = [{
   id: number,

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import CardShoes from '../CardShoes';
 import Footer from '../Footer';
 import Header from '../Header';
-import { AsideMenu, BodyShoesPage, MainShowCase, BoxColor, MainPriceS, DivItensShowCase, CardItem, BackGroundDivCard } from '../../styles/shoesPageStyle'
+import { AsideMenu, BodyShoesPage, MainShowCase, BoxColor, MainPriceS, DivItensShowCase, CardItem, BackGroundDivCard } from './shoesPageStyle'
 
 type CardSet = [{
   id: number,
@@ -10,8 +11,8 @@ type CardSet = [{
   price: string,
   gender: string,
   stamp: string,
-  size: [string],
-  colors: [string],
+  size: string[],
+  colors: string[],
   image: string
 }]
 type Numeric = number
@@ -19,6 +20,7 @@ type Numeric = number
 type SiteComum = {
   site: string
 }
+
 
 export default function ModelPageShoes ({site}: SiteComum) {
 
@@ -78,7 +80,6 @@ export default function ModelPageShoes ({site}: SiteComum) {
     'colors': [''],
     'image': ''
   }])
-
   const searchGender = (arg:string) => {
     let result:any = []
 
@@ -136,6 +137,7 @@ export default function ModelPageShoes ({site}: SiteComum) {
     setSearch(result)
     setNameTitle(`price between${arg2}and ${arg}`)
   }
+
 
 
   return (
@@ -212,20 +214,18 @@ export default function ModelPageShoes ({site}: SiteComum) {
         <MainShowCase>
           <h1>{nameTitle} Shoes</h1>
           <DivItensShowCase>
-            { search.map((raid) => {
+            {search.map(raid => {
               return (
-                <CardItem key={raid.id}>
-                  <BackGroundDivCard backgroundImage={`${raid.image}`}/>
-                  <p>{raid.name}</p>
-                  <span>{raid.gender}</span>
-                  <span>$ {raid.price}</span>
-                  <button>+ Cart</button>
-                </CardItem>
+                <>
+                <CardShoes key={raid.id} id={raid.id} types={raid.type} 
+                  name={raid.name} gender={raid.gender} tamanho={raid.size} price={raid.price}
+                  colors={raid.colors} image={raid.image}
+                />
+                </>
               )
             })
               
             }
-
           </DivItensShowCase>
         </MainShowCase>
       </BodyShoesPage>

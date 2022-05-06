@@ -221,12 +221,12 @@ export const CardItem = styled.div<BackGroundProp>`
     button:hover { 
         width: 40px;
         height: 40px;
-        border: 1px solid green;
-        background: url('/images/addcarrinho.png');
-        background-size: 80% 80%;
+        border: 1px solid transparent;
+        background: url('/images/lup.png');
+        background-size: 95% 95%;
         background-repeat: no-repeat;
         color: rgba(0, 0, 0, 0);
-        border-radius: 50px;
+        border-radius: 100px;
         background-position: center;
         transition: 0s;
         padding: 5px;
