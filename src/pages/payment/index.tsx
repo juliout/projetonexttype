@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../../context/CartContext';
 import Header from '../../components/Header'
 import Footer from '../../components/Footer';
-import { PaymentDiv, LeftPayment, RightPayment } from './paymentStyle'
+import { PaymentDiv, LeftPayment, RightPayment } from '../../styles/paymentstyle'
 import { AiOutlineDelete } from 'react-icons/ai'
 import {IoMdColorFill} from 'react-icons/io'
 
