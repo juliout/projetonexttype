@@ -33,7 +33,7 @@ export const LeftPayment = styled.div`
         justify-content: space-evenly;
     }
     .divImage {
-        
+        background: url('/images/teste.png');
         background-repeat: none;
         background-size: 100%;
         background-position: center;

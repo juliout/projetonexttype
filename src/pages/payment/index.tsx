@@ -6,7 +6,7 @@ import { PaymentDiv, LeftPayment, RightPayment } from './paymentStyle'
 import { AiOutlineDelete } from 'react-icons/ai'
 import {IoMdColorFill} from 'react-icons/io'
 
-const Payment = () => {
+export default function Payment(){
 
     const { cart, setCart } = useContext(CartContext)
     console.log(cart)
@@ -41,5 +41,3 @@ const Payment = () => {
         </>
     )
 }
-
-export default Payment;
