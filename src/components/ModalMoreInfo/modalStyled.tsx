@@ -64,7 +64,7 @@ export const ModalInfo = styled.div<modalInfoProps>`
         }
     }
     .dColors {
-        width: 90%;
+        width: 50%;
         height: 30%;
                 
         display: flex;
@@ -111,7 +111,7 @@ export const ModalInfo = styled.div<modalInfoProps>`
             }
 
             .dSizeCx {
-                width: 50%;
+                width: 20%;
                 height: 50%;
                 border: 1px solid #6e6e6e;
                 background-color: transparent;
@@ -177,8 +177,13 @@ export const CxColor = styled.option<modalInfoProps>`
     cursor: pointer;
     font-size: 25px;
     margin-right: 5px;
-    background-color: ${props => props.backgroundInfo};
-    color: green;
+    color: ${props => props.backgroundInfo};
+    background-color: silver;
+
+    span {
+        width: 2px;
+        height: 2px;
+    }    
 
     :hover {
         box-shadow: 0 0 10px 100px #ffffff inset;

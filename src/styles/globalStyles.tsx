@@ -16,11 +16,17 @@ export default createGlobalStyle`
 
     h1, h2, li, label, button {
         font-family: 'Orelega One', cursive;
+        @media(max-width: 700px) {
+            font-size: 20px;
+        }
+        @media(max-width: 426px) {
+            font-size: 14px;
+        }
     }
 
-    span, p , a, input[type=number]{
+    input{
         font-family: 'Lora', serif;
-        font-size: 15px;
     }
+   
 `
 

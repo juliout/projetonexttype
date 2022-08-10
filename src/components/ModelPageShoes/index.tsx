@@ -135,7 +135,7 @@ export default function ModelPageShoes ({site}: SiteComum) {
       }
     })
     setSearch(result)
-    setNameTitle(`price between${arg2}and ${arg}`)
+    setNameTitle(`price between ${arg2} and ${arg}`)
   }
 
 
@@ -216,12 +216,12 @@ export default function ModelPageShoes ({site}: SiteComum) {
           <DivItensShowCase>
             {search.map(raid => {
               return (
-                <>
+                
                 <CardShoes key={raid.id} id={raid.id} types={raid.type} 
                   name={raid.name} gender={raid.gender} tamanho={raid.size} price={raid.price}
                   colors={raid.colors} image={raid.image}
                 />
-                </>
+                
               )
             })
               

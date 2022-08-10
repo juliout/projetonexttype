@@ -20,6 +20,7 @@ export const BodyShoesPage = styled.div`
 
 export const AsideMenu = styled.div`
     width: 30%;
+    max-width: 500px;
     height: 70vh;
     border: 1px solid silver;
     margin-top: 5%;
@@ -129,7 +130,7 @@ export const MainPriceS = styled.form`
 
         label {
             width: 35%;
-            font-size: 20px;
+            font-size: 90%;
         }
         input[type=number] {
             width: 60%;
@@ -149,7 +150,7 @@ export const MainPriceS = styled.form`
         background-color: transparent;
         border: 1px solid silver;
         border-radius: 10px;
-        font-size: 20px;
+        font-size: 90%;
         cursor: pointer;
     }
     button:hover {

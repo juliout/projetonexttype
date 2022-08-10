@@ -6,7 +6,9 @@ export default function Header() {
   
   return (
     <DivHeader>
-      <a href="/"><img src='/images/logo.png' alt=""  className='Logo'/></a>
+      <a href="/">
+        <img src='/images/logo.png' alt="logo"  className='Logo'/>
+      </a>
       <ul>
         <BtnLink href="/shoes/nike" backgroudChose={'/images/nikebgtitle.png'}>
           <li>Nike</li>
@@ -23,7 +25,9 @@ export default function Header() {
         Login / Register
       </a>
 
-      <img src="/images/carrinho.png" alt="" className='marketCart' />
+      <a href="/payment" className='marketCart'>
+        <img src="/images/carrinho.png" alt="kartIcon" />
+      </a>
     </DivHeader>
   );
 }

@@ -15,9 +15,14 @@ export const DivHeader = styled.header`
     align-items: center;
 
     .Logo{
-        width: 120px;
+        
+        max-width: 120px;
         height: 55px;
         margin: 0 1%;
+        @media(max-width: 376px) {
+            max-width: 90px;
+            height: 45px;
+        }
     }
 
     ul {
@@ -27,7 +32,7 @@ export const DivHeader = styled.header`
         justify-content: space-between;
     }
     .registerLogin {
-        font-size: 17px;
+        font-size: 15px;
         
         width: 15%;
         max-width: 135px;
@@ -38,6 +43,11 @@ export const DivHeader = styled.header`
         height: 32px;
         
         margin-right: 3%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
         
     }
 

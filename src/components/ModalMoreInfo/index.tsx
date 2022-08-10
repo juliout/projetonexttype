@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../../../context/CartContext';
 import { BaseModal, ModalInfo } from './modalStyled';
 import {BsFillCartPlusFill} from 'react-icons/bs'
 import {ImCancelCircle} from 'react-icons/im'
@@ -15,14 +16,32 @@ type modalProps = {
     closeModal?: any
 }
 
-
 const ModalMoreInfo = ({ name, type, price, gender, size, fill , image, closeModal}:modalProps) => {
     
-    const [SendColor, setSendColor] = useState<string>('')
-  
+    const [selectColor, setSelectColor] = useState<string>('color')
+    const [selectSize, setSelectSize] = useState<string>('size')
+
+    size = ['select', ...size]
+    fill = ['select', ...fill]
+
+    const { cart, setCart } = useContext(CartContext)
+
+    console.log(selectSize,selectColor)
+    console.log(cart)
+    function addCart(){
+
+        setCart([...cart,{
+            name: name,
+            type: type,
+            price: price,
+            gender: gender,
+            size: selectSize,
+            fill: selectColor,
+            image: image
+        }])
+    }
   
     return (
-      <>
         <BaseModal>
             <ModalInfo backgroundInfo={`${image}`}>
                 <div className="leftImage"/>
@@ -33,9 +52,9 @@ const ModalMoreInfo = ({ name, type, price, gender, size, fill , image, closeMod
                         <p>Price: R$ {price}</p>
                         <div className='dColors'>
                             <span>Colors:</span>
-                            <select className='divCxColor'>
-                                { fill.map( c => {
-                                    return <CxColor backgroundInfo={c} key={c} onClick={()=> setSendColor(c)}>{c}</CxColor>
+                            <select className='divCxColor' onChange={(e)=> setSelectColor(e.target.value)}>
+                                { fill.map( cf => {
+                                    return <CxColor backgroundInfo={cf} key={cf}>{cf}</CxColor>
                                 })}                               
                             </select>
                         </div>
@@ -43,16 +62,18 @@ const ModalMoreInfo = ({ name, type, price, gender, size, fill , image, closeMod
                     <div className='rBton'>
                         <div className='dSize-rbton'>
                             <h2>size:</h2>
-                            <select className='dSizeCx'>
-                                {size.map(ca => {
+                            <select className='dSizeCx' onChange={(e)=> setSelectSize(e.target.value)}>
+                            {  size.map(sz => {
                                     return ( 
-                                        <CxSize>{ca}</CxSize>
+                                        <CxSize>{sz}</CxSize>
                                     )
-                                })}
+                                })
+                                    
+                            }
                             </select>
 
                         </div>
-                        <div className='btnInfoModal'>
+                        <div className='btnInfoModal' onClick={()=> addCart()}>
                             <button className='btnCart'>
                                 Add to cart <BsFillCartPlusFill size={'30px'} className='btnIcon'/>
                             </button>
@@ -66,7 +87,7 @@ const ModalMoreInfo = ({ name, type, price, gender, size, fill , image, closeMod
                 </div>
             </ModalInfo>
         </BaseModal>
-      </>
+      
   )
 }
 
