@@ -3,6 +3,7 @@ import { BottomDiv, Slider } from '../styles/homeStyle'
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs'
 import { Component, useEffect, useRef } from 'react'
 import Footer from '../components/Footer'
+import { CartProvider } from '../../context/CartContext'
 
 
 const Home = () => {
@@ -50,7 +51,7 @@ const Home = () => {
     
   })
   return (
-    <>  
+    <CartProvider>
       <Header/>
       <Slider ref={SliderR} id='SliderDiv'>
         <div className="slideContainer">
@@ -83,7 +84,7 @@ const Home = () => {
       </BottomDiv>
 
       <Footer/>
-    </>
+      </CartProvider>  
   )
 }
 export default Home

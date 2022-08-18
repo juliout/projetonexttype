@@ -5,12 +5,10 @@ import GlobalStyles from '../styles/globalStyles'
 
 export default function MyApp({ Component, pageProps}: AppProps) {
   return (
-  <>
   <CartProvider>    
     <GlobalStyles/>
     <Component {...pageProps} />
-  </CartProvider>
-  </>
+  </CartProvider>  
   
   )
 }

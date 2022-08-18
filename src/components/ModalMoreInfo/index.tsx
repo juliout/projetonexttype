@@ -27,7 +27,7 @@ const ModalMoreInfo = ({ name, type, price, gender, size, fill , image, closeMod
     const { cart, setCart } = useContext(CartContext)
 
     console.log(selectSize,selectColor)
-    console.log(cart)
+
     function addCart(){
 
         setCart([...cart,{
@@ -39,6 +39,7 @@ const ModalMoreInfo = ({ name, type, price, gender, size, fill , image, closeMod
             fill: selectColor,
             image: image
         }])
+        console.log(cart)
     }
   
     return (
@@ -73,8 +74,11 @@ const ModalMoreInfo = ({ name, type, price, gender, size, fill , image, closeMod
                             </select>
 
                         </div>
-                        <div className='btnInfoModal' onClick={()=> addCart()}>
-                            <button className='btnCart'>
+                        <div className='btnInfoModal'>
+                            <button className='btnCart' onClick={() => {
+                                addCart()
+                                closeModal(false)
+                                }}>
                                 Add to cart <BsFillCartPlusFill size={'30px'} className='btnIcon'/>
                             </button>
                             <button className='btnCancel' onClick={()=> {
