@@ -79,7 +79,7 @@ const Home = () => {
         <h1>Take the first step to new walks.</h1>
         <div>
           <a href="">meet us</a>
-          <a href="">all products</a>
+          <a href="/allproducts">all products</a>
         </div>
       </BottomDiv>
 

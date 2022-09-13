@@ -4,7 +4,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 import { AsideMenu, BodyShoesPage, MainShowCase, BoxColor, MainPriceS, DivItensShowCase, CardItem, BackGroundDivCard } from './shoesPageStyle'
 
-type CardSet = [{
+type itemObj = {
   id: number,
   name: string,
   type: string,
@@ -14,7 +14,8 @@ type CardSet = [{
   size: string[],
   colors: string[],
   image: string
-}]
+}
+type CardSet = itemObj[]
 type Numeric = number
 
 type SiteComum = {
@@ -32,14 +33,18 @@ export default function ModelPageShoes ({site}: SiteComum) {
           .then(data => {
             if(site === 'Nike'){
               setMainRaid(data.Nike)
-              setSearch(data.Nike)
-              
+              setSearch(data.Nike)              
             }else if (site === 'Adidas') {
               setMainRaid(data.Addidas)
               setSearch(data.Addidas)   
             } else if (site === 'Puma') {
               setMainRaid(data.Puma)
               setSearch(data.Puma)
+            } else if (site === 'All') {
+              let array = [...data.Nike,...data.Addidas,...data.Puma]
+              setMainRaid([...data.Nike,...data.Addidas,...data.Puma]),
+              
+              setSearch([...data.Nike, ...data.Addidas, ...data.Puma])
             }
           }
         )       
@@ -56,30 +61,8 @@ export default function ModelPageShoes ({site}: SiteComum) {
   const colors = ['white','blue', 'black', 'green', 'red', 'yellow', 'pink', 'brown', 'orange','grey', 'silver', 'purple','aqua']
   const [nameTitle, setNameTitle] = useState('All')
 
-  const [mainRaid, setMainRaid] = useState<CardSet>([
-    { 'id' : 0,
-    'name' : '',
-    'type' : '',
-    'price':  '',
-    'gender':'',
-    'stamp': '',
-    'size': [''],
-    'colors': [''],
-    'image': ''
-  }
-  ])
-  const [search, setSearch] = useState<CardSet>([
-    {
-    'id' : 0,
-    'name' : '',
-    'type' : '',
-    'price':  '',
-    'gender':'',
-    'stamp': '',
-    'size': [''],
-    'colors': [''],
-    'image': ''
-  }])
+  const [mainRaid, setMainRaid] = useState<CardSet>([])
+  const [search, setSearch] = useState<CardSet>([])
   const searchGender = (arg:string) => {
     let result:any = []
 
